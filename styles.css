@@ -129,20 +129,20 @@ body {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.03em;
     margin-bottom: 24px;
-    max-width: 700px;
+    max-width: 720px;
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
     color: var(--color-text-secondary);
-    line-height: 1.5;
-    max-width: 600px;
+    line-height: 1.55;
+    max-width: 620px;
 }
 
 .hero-subtitle + .hero-subtitle {
@@ -164,7 +164,7 @@ body {
 }
 
 .who p {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--color-text-secondary);
     max-width: 600px;
 }
@@ -191,8 +191,8 @@ h2 {
 
 /* About */
 .about p {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.75;
     color: var(--color-text-secondary);
     margin-bottom: 24px;
     max-width: 720px;
@@ -230,15 +230,15 @@ h2 {
 }
 
 .capability h3 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 12px;
     letter-spacing: -0.01em;
 }
 
 .capability p {
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 14px;
+    line-height: 1.7;
     color: var(--color-text-secondary);
 }
 
@@ -279,15 +279,15 @@ h2 {
 }
 
 .approach-item h3 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 8px;
     letter-spacing: -0.01em;
 }
 
 .approach-item p {
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 14px;
+    line-height: 1.7;
     color: var(--color-text-secondary);
     max-width: 600px;
 }
@@ -299,16 +299,16 @@ h2 {
 }
 
 .contact p {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--color-text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .contact-email {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     color: var(--color-accent);
     text-decoration: none;
@@ -402,11 +402,11 @@ h2 {
     }
 
     .about p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .contact-email {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
@@ -424,14 +424,14 @@ h2 {
     }
 
     .capability h3 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .approach-item h3 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .logo {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
