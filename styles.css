@@ -6,12 +6,14 @@
 }
 
 :root {
-    --color-bg: #ffffff;
+    --color-bg: #fafafa;
+    --color-surface: #ffffff;
     --color-text: #111111;
-    --color-text-secondary: #666666;
+    --color-text-secondary: #555555;
     --color-text-muted: #888888;
     --color-accent: #2563eb;
-    --color-border: #e5e5e5;
+    --color-border: #e8e8e8;
+    --color-grid: #f0f0f0;
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --max-width: 900px;
     --section-padding: 120px;
@@ -30,6 +32,23 @@ body {
     background-color: var(--color-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+}
+
+/* Subtle grid background */
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(var(--color-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.6;
 }
 
 .container {
@@ -44,8 +63,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
+    background-color: rgba(250, 250, 250, 0.92);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
     z-index: 100;
 }
@@ -63,6 +82,16 @@ body {
     color: var(--color-text);
     text-decoration: none;
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
+    color: var(--color-accent);
 }
 
 .nav {
@@ -86,6 +115,17 @@ body {
 .hero {
     padding-top: calc(64px + var(--section-padding));
     padding-bottom: var(--section-padding);
+    position: relative;
+}
+
+.hero-accent-line {
+    position: absolute;
+    top: calc(64px + 60px);
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), transparent);
+    opacity: 0.8;
 }
 
 .hero h1 {
@@ -105,9 +145,35 @@ body {
     max-width: 600px;
 }
 
+.hero-subtitle + .hero-subtitle {
+    margin-top: 12px;
+}
+
+/* Who we work with - nested section */
+.who {
+    padding: 64px 0 0 0;
+    border-bottom: none;
+}
+
+.who .container {
+    padding: 0;
+}
+
+.who h2 {
+    margin-bottom: 16px;
+}
+
+.who p {
+    font-size: 17px;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+}
+
 /* Sections */
 section {
     padding: var(--section-padding) 0;
+    background-color: var(--color-surface);
+    position: relative;
 }
 
 section:not(:last-of-type) {
@@ -115,10 +181,10 @@ section:not(:last-of-type) {
 }
 
 h2 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--color-text-muted);
     margin-bottom: 48px;
 }
@@ -143,8 +209,28 @@ h2 {
     gap: 48px 64px;
 }
 
+.capability {
+    position: relative;
+}
+
+.capability-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--color-accent);
+}
+
+.capability-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
 .capability h3 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     margin-bottom: 12px;
     letter-spacing: -0.01em;
@@ -165,21 +251,35 @@ h2 {
 
 .approach-item {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     align-items: flex-start;
+    position: relative;
 }
 
 .approach-number {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--color-accent);
-    min-width: 32px;
+    min-width: 28px;
     flex-shrink: 0;
     padding-top: 2px;
 }
 
+.approach-line {
+    position: absolute;
+    left: 52px;
+    top: 28px;
+    width: 1px;
+    height: calc(100% + 48px);
+    background: linear-gradient(180deg, var(--color-border), transparent);
+}
+
+.approach-item:last-child .approach-line {
+    display: none;
+}
+
 .approach-item h3 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     margin-bottom: 8px;
     letter-spacing: -0.01em;
@@ -195,19 +295,24 @@ h2 {
 /* Contact */
 .contact {
     padding-bottom: 80px;
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
 }
 
 .contact p {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--color-text-secondary);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .contact-email {
-    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--color-accent);
     text-decoration: none;
+    margin-top: 16px;
     transition: opacity 0.2s ease;
 }
 
@@ -215,10 +320,17 @@ h2 {
     opacity: 0.7;
 }
 
+.email-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
 /* Footer */
 .footer {
     border-top: 1px solid var(--color-border);
     padding: 32px 0;
+    background-color: var(--color-bg);
 }
 
 .footer p {
@@ -236,6 +348,11 @@ h2 {
         height: 56px;
     }
 
+    .logo-icon {
+        width: 18px;
+        height: 18px;
+    }
+
     .nav {
         gap: 20px;
     }
@@ -248,12 +365,21 @@ h2 {
         padding-top: calc(56px + var(--section-padding));
     }
 
+    .hero-accent-line {
+        top: calc(56px + 40px);
+        width: 40px;
+    }
+
     .hero h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+    .who {
+        padding-top: 48px;
     }
 
     .capability-grid {
@@ -261,9 +387,18 @@ h2 {
         gap: 40px;
     }
 
+    .capability-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 16px;
+    }
+
     .approach-item {
-        flex-direction: column;
-        gap: 12px;
+        gap: 16px;
+    }
+
+    .approach-line {
+        left: 44px;
     }
 
     .about p {
@@ -271,17 +406,17 @@ h2 {
     }
 
     .contact-email {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     h2 {
@@ -289,10 +424,14 @@ h2 {
     }
 
     .capability h3 {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .approach-item h3 {
-        font-size: 17px;
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 16px;
     }
 }

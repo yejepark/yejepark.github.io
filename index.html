@@ -8,11 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <div class="bg-grid"></div>
+    
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">Kontinuum Labs</a>
+            <a href="#" class="logo">
+                <i data-lucide="network" class="logo-icon"></i>
+                Kontinuum Labs
+            </a>
             <nav class="nav">
                 <a href="#about">About</a>
                 <a href="#capabilities">Capabilities</a>
@@ -25,6 +31,7 @@
     <main>
         <section class="hero">
             <div class="container">
+                <div class="hero-accent-line"></div>
                 <h1>AI-driven data systems for real-world operations.</h1>
                 <p class="hero-subtitle">
                 We design and deploy production-grade data systems for manufacturing, finance, and environmental applications.
@@ -55,6 +62,9 @@
                 <h2>Capabilities</h2>
                 <div class="capability-grid">
                     <div class="capability">
+                        <div class="capability-icon">
+                            <i data-lucide="cpu"></i>
+                        </div>
                         <h3>ERP Automation & AI Integration</h3>
                         <p>
                         Custom ERP automation for manufacturing.<br>
@@ -63,14 +73,23 @@
                         </p>
                     </div>
                     <div class="capability">
+                        <div class="capability-icon">
+                            <i data-lucide="trending-up"></i>
+                        </div>
                         <h3>Financial & Quantitative Analysis</h3>
                         <p>Data pipelines and statistical models for financial research. From time-series analysis to portfolio construction, we build tools that support rigorous decision-making.</p>
                     </div>
                     <div class="capability">
+                        <div class="capability-icon">
+                            <i data-lucide="globe"></i>
+                        </div>
                         <h3>Environmental & Geospatial Data Science</h3>
                         <p>Processing and analysis of large-scale environmental datasets. Land surface temperature modeling, satellite imagery analysis, and geospatial analytics for research and policy applications.</p>
                     </div>
                     <div class="capability">
+                        <div class="capability-icon">
+                            <i data-lucide="database"></i>
+                        </div>
                         <h3>Custom Data Systems</h3>
                         <p>End-to-end data infrastructure: pipeline architecture, database design, API development, and deployment. We build systems that scale and remain comprehensible.</p>
                     </div>
@@ -84,6 +103,7 @@
                 <div class="approach-content">
                     <div class="approach-item">
                         <span class="approach-number">01</span>
+                        <div class="approach-line"></div>
                         <div>
                             <h3>Understand the problem</h3>
                             <p>We begin with structured inquiry. What is the actual decision being made? What data exists, what is missing, and what is the cost of error? Clarity at this stage prevents costly misdirection later.</p>
@@ -91,6 +111,7 @@
                     </div>
                     <div class="approach-item">
                         <span class="approach-number">02</span>
+                        <div class="approach-line"></div>
                         <div>
                             <h3>Build the model</h3>
                             <p>We favor simple, interpretable models over complex ones unless the problem demands otherwise. Every model we build includes uncertainty quantification and validation against real-world outcomes.</p>
@@ -111,9 +132,10 @@
             <div class="container">
                 <h2>Contact</h2>
                 <p>For project inquiries or collaboration:</p>
-                <p>Briefly describe your problem — we’ll respond within 24 hours.</p>
+                <p>Briefly describe your problem — we'll respond within 24 hours.</p>
                 <a href="mailto:contact@kontinuumlabs.com" class="contact-email">
-                  contact@kontinuumlabs.com
+                    <i data-lucide="mail" class="email-icon"></i>
+                    contact@kontinuumlabs.com
                 </a>
             </div>
         </section>
@@ -124,5 +146,9 @@
             <p>&copy; 2026 Kontinuum Labs. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
